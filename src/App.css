@@ -2,21 +2,30 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+
+.board{
+    text-align: center;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cell {
+    border: 1px solid black;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    font-family: "Monotype Corsiva";
 }
 
-.App-link {
-  color: #09d3ac;
+.p1 {
+    border: 1px solid black;
+    background-color: yellow;
+    color: black;
+    border-radius: 50%;
+}
+
+.p2 {
+    background-color: red;
+    color: black;
+    border-radius: 50%;
+    border: 1px solid black;
 }

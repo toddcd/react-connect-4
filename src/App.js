@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import GridCell from "./components/GridCell";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+    renderGrid = () => {
+        const grid = [];
+        for (let y = 5; y >= 0; y--) {
+            const row = [];
+            for (let x = 0; x < 7; x++) {
+                // create column
+                row.push(<GridCell key={x} x={x} y={y} />);
+            }
+            // create row
+            grid.push(<div key={y} className='row'>{row}</div>);
+        }
+        return grid;
+    }
+
+    render() {
+        return (
+            <div className='board'>
+                <h1>Connect 4</h1>
+                {this.renderGrid()}
+            </div>
+        )
+    }
 }
 
 export default App;
